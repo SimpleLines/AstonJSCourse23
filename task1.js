@@ -57,6 +57,12 @@ sum('20', 0.403333);
 const validateGetNumberRadixParams = (num, rad) => {
     if (isUndefined(num) || isUndefined(rad)) {
         throw new Error('Функция getNumberRadix могла быть вызвана без параметров');
+    } else if(isNaN(+num)){
+        throw new Error('Функция getNumberRadix, в параметр num было передано не число');
+    } else if (+num < 0) {
+        throw new Error('Функция getNumberRadix, в параметр num было передано отрицательное число');
+    } else if (!Number.isInteger(+num)) {
+        throw new Error('Функция getNumberRadix, в параметр num было передано не целое число');
     } else if (isNaN(+rad)) {
         throw new Error('Функция getNumberRadix была вызвана с некорректными параметрами, radix не число');
     } else if (rad < 2 || rad > 16) {
@@ -68,9 +74,9 @@ function getNumberRadix(number, radix) {
     validateGetNumberRadixParams(number, radix);
     if (!isString(number)) {
         const properParams = number.toString();
-        return parseFloat(properParams, radix);
+        return parseInt(properParams, radix);
     }
     return parseInt(number, radix);
 };
 
-console.log(getNumberRadix());
+console.log(getNumberRadix('4', 2));
