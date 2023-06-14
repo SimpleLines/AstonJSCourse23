@@ -15,14 +15,14 @@ const isString = (arg) => typeof arg === 'string';
 const validateAndTransformString = (arg) => {
     const properArg = Number(arg)
     if (isNaN(properArg)) {
-        throw new Error('Некорректные данные');
+        throw new Error('В функции sum некорректные данные');
     }
     return properArg;
 };
 
 function sum(a, b) {
     if (isUndefined(a) || isUndefined(b)) {
-        throw new Error('Не задано число в первом или втором аргументе');
+        throw new Error('В функции sum не задано число в первом или втором аргументе');
     } else if (isString(a) || isString(b)) {
         const result = validateAndTransformString(a) + validateAndTransformString(b);
         return parseFloat(result.toFixed(3));
@@ -57,18 +57,18 @@ sum('20', 0.403333);
 const validateGetNumberRadixParams = (num, rad) => {
     if (isUndefined(num) || isUndefined(rad)) {
         throw new Error('Функция getNumberRadix могла быть вызвана без параметров');
-    } else if (isNaN(+rad) || isNan(+num)) {
-        throw new Error('Функция getNumberRadix была вызвана с некорректными параметрами');
+    } else if (isNaN(+rad)) {
+        throw new Error('Функция getNumberRadix была вызвана с некорректными параметрами, radix не число');
     } else if (rad < 2 || rad > 16) {
-        throw new Error('Функция getNumberRadix была вызвана с некорректными параметрами');
+        throw new Error('Функция getNumberRadix вызвана с параметром radix больше 16 или меньше 2');
     }
 };
 
 function getNumberRadix(number, radix) {
     validateGetNumberRadixParams(number, radix);
-    if (isString(number)) {
-        const properNum = Number(number);
-        return parseFloat(properNum, radix);
+    if (!isString(number)) {
+        const properParams = number.toString();
+        return parseFloat(properParams, radix);
     }
     return parseInt(number, radix);
 };
