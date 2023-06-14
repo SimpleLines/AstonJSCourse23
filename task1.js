@@ -15,7 +15,7 @@ const isString = (arg) => typeof arg === 'string';
 const validateAndTransformString = (arg) => {
     const properArg = Number(arg)
     if(isNaN(properArg)) {
-        throw Error('Некорректные данные');
+        throw new Error('Некорректные данные');
     } 
     return properArg;
 }
@@ -25,7 +25,10 @@ function sum(a, b) {
         throw new Error('Не задано число в первом или втором аргументе')
     } else if (isString(a) || isString(b)){
         return validateAndTransformString(a) + validateAndTransformString(b)
-    } 
+    } else {
+        const result = a + b;
+        return parseFloat(result.toFixed(3));
+    }
 }
 
-console.log(sum(22, 'fgdfgdfgdf'));
+console.log(sum(1, 2));
