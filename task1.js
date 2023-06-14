@@ -72,11 +72,8 @@ const validateGetNumberRadixParams = (num, rad) => {
 
 function getNumberRadix(number, radix) {
     validateGetNumberRadixParams(number, radix);
-    if (!isString(number)) {
-        const properParams = number.toString();
-        return parseInt(properParams, radix);
-    }
-    return parseInt(number, radix);
+
+    return Number(number).toString(radix);
 };
 
 console.log(getNumberRadix('4', 2));
