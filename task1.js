@@ -7,7 +7,7 @@ function sum(a, b) {
     const validTypes = ['string', 'number'];
     return validTypes.includes(type);
   };
-  if (!isValidType(typeof a) || !isValidType(typeof b)) {
+  if (!checkIfValidType(typeof a) || !checkIfValidType(typeof b)) {
     return;
   }
 
