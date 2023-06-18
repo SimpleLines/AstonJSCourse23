@@ -1,19 +1,14 @@
-function sum(a, b) {
-  return +`${(a + b).toFixed(3)}`;
-}
+const isArray = (v) => Array.isArray(v);
+const isObject = (v) => typeof v === "object";
 
-function validRadix(radix) {
-  return radix < 0 || radix > 16 || isNaN(radix);
-}
-
-function validNum(number) {
-  return isNaN(number) || number < 0;
-}
-
-function getNumberRadix(number, radix) {
-  let errMessage =
-    "Функция getNumberRadix была вызвана с некорректными параметрами - ";
-  if (validRadix(radix)) throw new Error(errMessage + `${radix}`);
-  if (validNum(number)) throw new Error(errMessage + `${number}`);
-  return `${Number(number).toString(radix)}`;
+function deepCopyObject(obj) {
+  const copiedObj = Object.assign({}, obj);
+  for (let key in copiedObj) {
+    copiedObj[key] = isObject(obj[key]) ? deepCopyObject(obj[key]) : obj[key];
+  }
+  if (isArray(obj)) {
+    copiedObj.length = obj.length;
+    return Array.from(copiedObj);
+  }
+  return copiedObj;
 }
