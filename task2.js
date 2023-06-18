@@ -24,5 +24,3 @@ function getInterval(arr, from, to) {
     return newArr;
 }
 
-
-console.log(getInterval([1,2,3,4,'hello'], 2, 4))
