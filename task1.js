@@ -1,18 +1,53 @@
-function sum(a, b){
-  if (typeof a === 'boolean' || typeof b === 'boolean' || a === null || b === null) {
-    throw TypeError('Не правильные по типу аргументы');
+const staff = {
+  name: 'Alex',
+  age: 20,
+  skills: [
+      {
+          id: 1,
+          value: 'html',
+      },
+      {
+          id: 2,
+          value: 'js',
+      },
+      {
+          id: 3,
+          value: 'css',
+      },
+  ],
+  cost: undefined,
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed ...',
+  knowledge: [
+      {
+          label: 'React JS',
+          score: 7,
+      },
+      {
+          label: 'JS',
+          score: 7,
+      },
+      {
+          label: 'CSS',
+          score: 9,
+      },
+      {
+          label: 'HTML',
+          score: 10,
+      },
+  ],
+  avatar: null,
+};
+
+function deepCopyObject(obj){
+  let copyObj = {};
+  for(let key in obj){
+    if(typeof obj[key] === 'obj'){
+      deepCopyObject(obj[key]);
+    }
+    copyObj[key] = obj[key];
   }
-  let argA = +a;
-  let argB = +b;
-  if(isNaN(argA) || isNaN(argB) || !isFinite(argA) || !isFinite(argB)) {
-    throw TypeError('Не правильные по типу аргументы');
-  }
-  let sumAandB = argA + argB;
-  sumAandB = +sumAandB.toFixed(3);  
-  return sumAandB;
+  return copyObj;
 }
 
-let oneSum = sum(1, 2);// получаем 3
-let twoSum = sum(0.6, 0.7);// получаем 1.3
-let threeSum = sum(0.1, 0.2);// получаем 0.3
-console.log(oneSum, twoSum, threeSum);
+let oneDeepCopyObject = deepCopyObject(staff);
+console.log(oneDeepCopyObject);

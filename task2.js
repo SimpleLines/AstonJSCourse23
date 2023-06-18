@@ -1,17 +1,26 @@
-function getNumberRadix(number, radix){
-	if (typeof number === 'boolean' || number === null || typeof radix !== 'number' || radix < 2 || radix > 16) {
-      throw Error('Функция getNumberRadix была вызвана с некорректными параметрами 1');
-    }
-	let stringNumber = +number;	
-	if(stringNumber % 1 !== 0 || isNaN(stringNumber)) {
-    throw Error('Функция getNumberRadix была вызвана с некорректными параметрами 2');
+function getInterval(arr, from, to){
+  let toFrom = from;
+  let fromTo = to;
+  let newArr = arr;
+  if(typeof from !== 'number'){
+    throw Error('В функцию getInterval были переданы невалидные параметры. Параметр from должен быть числом');
   }
-	return stringNumber.toString(radix);
+  if(typeof to !== 'number'){
+    throw Error('В функцию getInterval были переданы невалидные параметры. Параметр to должен быть числом');
+  }
+  if(from > to) {
+    from = fromTo;
+    to = toFrom;
+  }
+  return newArr.filter(function(item){
+    if(typeof item !== 'number'){
+      throw Error('В функцию getInterval были переданы невалидные параметры. Параметр arr должен содержать только числовые значения');
+    }
+    return item >= from && item <= to;
+  })
 }
+let oneGetInterval = getInterval([10,40,5,15,25], 5, 20) // [10,5,15]
+let twoGetInterval = getInterval([10,40,5,15,25], 20, 5) // [10,5,15]
+// let threeGetInterval = getInterval([1,2,3,4,'hello'], 2, 4) // ошибка
 
-let oneGetNumberRadix = getNumberRadix(4, 2);// получаем "100"
-let twoGetNumberRadix = getNumberRadix('16', 8);// получаем "20"
-// let threeGetNumberRadix = getNumberRadix('Hello', 4);// получаем ошибку
-// let fourGetNumberRadix = getNumberRadix(10, 32);// получаем ошибку
-// let fiveGetNumberRadix = getNumberRadix(10, "JS");// получаем ошибку
-console.log(oneGetNumberRadix, twoGetNumberRadix);
+console.log(oneGetInterval, twoGetInterval);
