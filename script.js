@@ -13,7 +13,6 @@ const deepCopyObject = (obj) => {
       } else newObj[key] = obj[key];
     }
   }
-
   return newObj;
 };
 
