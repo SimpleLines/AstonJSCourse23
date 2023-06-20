@@ -1,8 +1,13 @@
-function sum(a, b) {
-    const numbA = parseFloat(a);
-    const numbB = parseFloat(b);
-    if (isNaN(numbA) || isNaN(numbB)) {
-      console.log('Данные аргементы не являются числами')
-    }
-    return parseFloat((numbA + numbB).toFixed(3));
+function deepCopyObject(obj) {
+  if (typeof obj !== "object" || obj === null) {
+    return obj;
+  }
+
+  const newObj = Array.isArray(obj) ? [] : {};
+
+  for (const key in obj) {
+    newObj[key] = deepCopyObject(obj[key]);
+  }
+
+  return newObj;
 }

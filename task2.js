@@ -1,16 +1,20 @@
-function getNumberRadix(number, radix) {
-  if (typeof number === "string") {
-    number = parseInt(number, 10);
-  }
-  if (!Number.isInteger(number) || number <= 0) {
+function getInterval(arr, from, to) {
+  if (arr.some((el) => typeof el !== "number")) {
     throw new Error(
-      "Функция getNumberRadix была вызвана с некорректными параметрами"
+      "В функцию getInterval были переданы невалидные параметры. Параметр arr должен содержать только числовые значения"
     );
   }
-  if (!Number.isInteger(radix) || radix < 2 || radix > 16) {
+  if (typeof from !== "number") {
     throw new Error(
-      "Функция getNumberRadi была вызвана с некорректными параметрами"
+      "В функцию getInterval были переданы невалидные параметры. Параметр from должен содержать только числовые значения"
     );
   }
-  return number.toString(radix);
+  if (typeof to !== "number") {
+    throw new Error(
+      "В функцию getInterval были переданы невалидные параметры. Параметр to должен содержать только числовые значения"
+    );
+  }
+  return arr.filter((el) => {
+    return el >= from && el <= to;
+  });
 }
