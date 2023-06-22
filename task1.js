@@ -1,22 +1,12 @@
-function isPrimitive(obj) {
-    return obj == null ||
-        typeof obj === 'number' ||
-        typeof obj === 'string' ||
-        typeof obj === 'boolean'
+function deleteElementFromArray(arr, elem) {
+    const newArr = arr.slice(0);
+    
+    let elemIndex = arr.indexOf(elem);
+    if (elemIndex !== -1) {
+        newArr.splice(elemIndex, 1);
+    }
+   
+    return newArr;
 }
 
-function deepCopyObject(obj) {
-    if (isPrimitive(obj)) {
-        return obj
-    } else if (Array.isArray(obj)) {
-        return obj.map((val) => {
-            return deepCopyObject(val)
-        })
-    } else if (obj != null && typeof obj === 'object') {
-        let res = {}
-        for (let k in obj) {
-            res[k] = deepCopyObject(obj[k])
-        }
-        return res
-    }
-}
+
