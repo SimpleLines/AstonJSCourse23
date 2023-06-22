@@ -26,5 +26,3 @@ function getArrIndex(arr, index, elem1, elem2, ...elemN) {
 }
 
 let addElementsToArray = curry(getArrIndex);
-
-console.log(addElementsToArray([10, 80, 90, 30])(100, 200));
