@@ -1,12 +1,24 @@
-const addElementsToArray = (arr, index = 0) => (...elems) => {
-    let newArr = arr.slice(0);
+function getInterval(arr, from, to) {
 
-    if (index == 0 || index >= arr.length) {
-        newArr.push(...elems)
-    } else if (index > 0 && index % 2 == 0) {
-        newArr.splice(index, 0, ...elems)
-    } else {
-        throw new Error('the index cannot be a negative number or a fractional number.')
+    if (typeof from !== 'number') throw new Error('В функцию getInterval были переданы невалидные параметры.' +
+        'Параметр from должен быть числом.')
+    if (typeof to !== 'number') throw new Error('В функцию getInterval были переданы невалидные параметры.' +
+        'Параметр to должен быть числом.')
+
+    const newArr = [];
+
+    if (from > to) {
+        [from, to] = [to, from]
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] == 'number') {
+            let checkInterval = arr[i] >= from && arr[i] <= to;
+            if (checkInterval) newArr.push(arr[i])
+        } else {
+            throw new Error('В функцию getInterval были переданы невалидные параметры. Параметр arr ' +
+                'должен содержать только числовые значения.')
+        }
     }
 
     return newArr;
