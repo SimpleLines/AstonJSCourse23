@@ -1,53 +1,16 @@
-const staff = {
-  name: 'Alex',
-  age: 20,
-  skills: [
-      {
-          id: 1,
-          value: 'html',
-      },
-      {
-          id: 2,
-          value: 'js',
-      },
-      {
-          id: 3,
-          value: 'css',
-      },
-  ],
-  cost: undefined,
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed ...',
-  knowledge: [
-      {
-          label: 'React JS',
-          score: 7,
-      },
-      {
-          label: 'JS',
-          score: 7,
-      },
-      {
-          label: 'CSS',
-          score: 9,
-      },
-      {
-          label: 'HTML',
-          score: 10,
-      },
-  ],
-  avatar: null,
-};
-
-function deepCopyObject(obj){
-  let copyObj = {};
-  for(let key in obj){
-    if(typeof obj[key] === 'obj'){
-      deepCopyObject(obj[key]);
-    }
-    copyObj[key] = obj[key];
+function deleteElementFromArray(arr, elem){
+  if(!arr.includes(elem)){
+    return arr;
   }
-  return copyObj;
+  let deleteIndex = arr.findIndex(function(item){
+    return item === elem;
+  });
+  return arr.filter(function(item, index){
+    return index !== deleteIndex;
+  });
 }
 
-let oneDeepCopyObject = deepCopyObject(staff);
-console.log(oneDeepCopyObject);
+let oneDeleteElementFromArray = deleteElementFromArray([ 10, 80, 90, 30 ], 90) // [ 10, 80, 30 ]
+let twoDeleteElementFromArray = deleteElementFromArray([ 10, 80, 90, 30 ], 100) // [ 10, 80, 90, 30 ]
+
+console.log(oneDeleteElementFromArray, twoDeleteElementFromArray);

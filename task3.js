@@ -1,17 +1,32 @@
-function getUniqArray(arr){
-  let newArr = arr;
-  let array = [];
-  // let set = [...new Set(newArr)];
-	// return set;
-  for(let i = 0; i < newArr.length; i += 1){
-    if(typeof newArr[i] !== 'number'){
-      throw Error('Входящий массив состоит не только из чисел')
-    }
-    if(!array.includes(newArr[i])){
-      array.push(newArr[i]);
-    }
-  }
-  return array;
+function createPerson({name = "New User", skills = []}){
+  return {
+    name: name,
+    skills: skills,    
+    addSkill(addS){
+      this.skills.push(addS);
+      this.skills = [...new Set(this.skills)];
+      return this;
+    },
+    removeSkill(remove){
+      this.skills = this.skills.filter(function(item){
+        return item !== remove;
+      })
+      return this;
+    },
+    addName(addN){
+      this.name = addN;
+      return this;
+    },
+  };
 }
-let oneGetUniqArray = getUniqArray([10,20,5,10,20]); // [10,20,5]
-console.log(oneGetUniqArray);
+
+const wizard = createPerson({name:'Harry Potter', skills:['magic', 'kindness']});
+wizard
+  .addName('Lord Voldemort')
+  ?.addSkill('strength')
+  ?.addSkill('health')
+  ?.removeSkill('kindness')
+  ?.addSkill('anger')
+  ?.addSkill('anger');
+
+console.log(wizard);
