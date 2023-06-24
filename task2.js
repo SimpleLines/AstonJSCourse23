@@ -1,20 +1,12 @@
-function getInterval(arr, from, to) {
-  if (arr.some((el) => typeof el !== "number")) {
+function addElementsToArray(arr, index = arr.length) {
+  if (index < 0 || !Number.isInteger(index)) {
     throw new Error(
-      "В функцию getInterval были переданы невалидные параметры. Параметр arr должен содержать только числовые значения"
+      "the index cannot be a negative number or a fractional number "
     );
   }
-  if (typeof from !== "number") {
-    throw new Error(
-      "В функцию getInterval были переданы невалидные параметры. Параметр from должен содержать только числовые значения"
-    );
-  }
-  if (typeof to !== "number") {
-    throw new Error(
-      "В функцию getInterval были переданы невалидные параметры. Параметр to должен содержать только числовые значения"
-    );
-  }
-  return arr.filter((el) => {
-    return el >= from && el <= to;
-  });
+  return (...els) => {
+    const newArr = [...arr];
+    newArr.splice(index, 0, ...els);
+    return newArr;
+  };
 }

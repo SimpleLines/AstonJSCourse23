@@ -1,13 +1,6 @@
-function deepCopyObject(obj) {
-  if (typeof obj !== "object" || obj === null) {
-    return obj;
-  }
-
-  const newObj = Array.isArray(obj) ? [] : {};
-
-  for (const key in obj) {
-    newObj[key] = deepCopyObject(obj[key]);
-  }
-
-  return newObj;
-}
+const deleteElementFromArray = (arr, elem) => {
+  const newArr = [...arr];
+  const idx = newArr.indexOf(elem);
+  if (idx !== -1) newArr.splice(idx, 1);
+  return newArr;
+};
