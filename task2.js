@@ -8,24 +8,24 @@ function Company(name, salary) {
   const store = Company.store;
 
   Company.addStaff = function({_name, _salary}) {
-    store.staffList.push({name: _name, income: 0 - _salary});
-    store.money -= _salary;
+    store.staffList.push({name: _name, income: 0});
     store.countStaff++;
   }
 
   Company.getLeaders = function() {
     let copy = JSON.parse(JSON.stringify(store.staffList));
-    copy.sort((a, b) => a.income + b.income);
-    return copy.slice(copy.length - 2).reverse();
+    copy.sort((a, b) => a.income - b.income);
+    return copy.slice(copy.length - 2);
   }
 
   this._name = name;
   this._salary = salary;
 
   this.income = function(value) {
-    Company.store.money += value;
+    const inc = value - this._salary;
+    Company.store.money += inc;
     let curr = Company.store.staffList.find((el) => el.name === this._name);
-    curr.income += value;
+    curr.income += inc;
   }
 
   this.spend = function(value) {
