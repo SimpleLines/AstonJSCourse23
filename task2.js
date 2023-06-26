@@ -1,23 +1,69 @@
-const addElementsToArray = (arr, index) => (...args) => {
-  let array = arr;
-  if(index && index % 1 !== 0 || index <= 0){
-    throw Error('the index cannot be a negative number or a fractional number');
-  } else if(index < arr.length && index && typeof index === 'number'){
-    let startArr = array.slice(0, index);
-    let endArr = array.slice(index, array[array.length - 1]);
-    for(let i = 0; i < args.length; i +=1 ){
-      startArr.push(args[i]);
+function Company(name, salary){
+  this.name = { 
+    value: name,
+    writable: false
+  };
+  this.salary = { 
+    value: salary, 
+    writable: false
+  }; 
+  Company.addStaff({name: this.name.value, income: 0});
+  this.income = function(value){    
+    let index = Company.store.staffList.findIndex(item => item.name === this.name.value);
+    let obj = Company.store.staffList[index];
+    let newObj = {
+      ...obj, 
+      income: obj.income += (value - this.salary.value)
     }
-    return startArr.concat(endArr);
-  } else {
-    return array.concat(args);
-  }  
+    Company.store.staffList = [...Company.store.staffList.slice(0, index), newObj, ...Company.store.staffList.slice(index + 1)];
+    Company.store.money += (value - this.salary.value);
+    return Company;
+  }
+  this.spend = function(value){
+    let index = Company.store.staffList.findIndex(item => item.name === this.name.value);
+    let obj = Company.store.staffList[index];
+    let newObj = {
+      ...obj, 
+      income: obj.income -= value
+    }
+    Company.store.staffList = [...Company.store.staffList.slice(0, index), newObj, ...Company.store.staffList.slice(index + 1)];
+    Company.store.money -= value;
+    return Company;
+  }
+}
+Company.addStaff = function(staff) {
+  this.store.staffList.push(staff);  
+  this.store.countStaff++;
+  return this;
+}
+Company.store = {
+  staffList: [],
+  countStaff: 0,
+  money: 0,
+}
+Company.getLeaders = function() {
+  let firstNumber = this.store.staffList[0].income;
+  let arr = this.store.staffList;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].income > firstNumber) {
+      firstNumber = arr[i].income;
+    }
+  }
+  let arrayMaxIncome = arr.filter(function(item) {
+    return item.income === firstNumber;
+  });
+  return arrayMaxIncome;
 }
 
-let oneAddElementsToArray = addElementsToArray([10, 80, 90, 30])(100, 200) // [ 10, 80, 90, 30, 100, 200 ]
-let twoAddElementsToArray = addElementsToArray([10, 80, 90, 30], 2)(100, 200) // [ 10, 80, 100, 200, 90, 30 ]
-let threeAddElementsToArray = addElementsToArray([10, 80, 90, 30], 50)(100, 200) // [ 10, 80, 90, 30, 100, 200 ]
-// let fourAddElementsToArray = addElementsToArray([10, 80, 90, 30], -2)(100, 200) // ошибка
-// let fiveAddElementsToArray = addElementsToArray([10, 80, 90, 30], 2.5)(100, 200) // ошибка
-
-console.log(oneAddElementsToArray, twoAddElementsToArray, threeAddElementsToArray);
+const alex = new Company('Alex', 1000);
+const max = new Company('Max', 250);
+const peter = new Company('Peter', 250);
+const john = new Company('John', 250);
+alex.income(500);
+alex.spend(2500);
+max.income(500);
+peter.income(500);
+peter.income(500);
+john.income(750);
+console.log(Company.store);
+console.log(Company.getLeaders());
