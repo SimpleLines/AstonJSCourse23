@@ -1,7 +1,6 @@
 function Company(name, salary) {
   this.name = name;
   this.salary = salary;
-  this.incomeValue = 0;
   defineProperties(this, { name, salary });
   Company.addStaff({ name, income: 0 });
 }
