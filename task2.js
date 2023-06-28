@@ -98,4 +98,3 @@ function getUniqArray(arr) {
 
 getUniqArray([10, 20, 5, 10, 20]);
 
-queueMicrotask()
