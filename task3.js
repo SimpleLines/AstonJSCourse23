@@ -28,8 +28,47 @@ const addElementsToArray = (arr, index) => (...elem) => {
     }
 }
 
-addElementsToArray([10, 80, 90, 30])(100, 200);
-addElementsToArray([10, 80, 90, 30], 2)(100, 200);
-addElementsToArray([10, 80, 90, 30], 50)(100, 200);
-addElementsToArray([10, 80, 90, 30], -2)(100, 200);
-addElementsToArray([10, 80, 90, 30], 2.5)(100, 200);
+// addElementsToArray([10, 80, 90, 30])(100, 200);
+// addElementsToArray([10, 80, 90, 30], 2)(100, 200);
+// addElementsToArray([10, 80, 90, 30], 50)(100, 200);
+// addElementsToArray([10, 80, 90, 30], -2)(100, 200);
+// addElementsToArray([10, 80, 90, 30], 2.5)(100, 200);
+
+//Задача 3.
+
+
+function createPerson(settings) {
+    const name = settings.name || "New User";
+    const skills = settings.skills || [];
+    
+    return {
+      name,
+      skills,
+      
+      addSkill(skill) {
+        if (!this.skills.includes(skill)) {
+          this.skills.push(skill);
+        }
+      },
+      
+      removeSkill(skill) {
+        const index = this.skills.indexOf(skill);
+        if (index !== -1) {
+          this.skills.splice(index, 1);
+        }
+      },
+      
+      addName(newName) {
+        this.name = newName;
+      }
+    };
+  }
+  
+  const wizard = createPerson({name:'Harry Potter', skills:['magic', 'kindness']});
+
+  wizard.addName('Nik')
+  wizard.addSkill('Frontend developer')
+  wizard.addSkill('Frontend developer')
+  wizard.addSkill('For test')
+  wizard.removeSkill('For test')
+  console.log(wizard)
