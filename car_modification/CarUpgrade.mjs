@@ -1,4 +1,4 @@
-import Car from "./Car.mjs";
+import Car from "../Classes/Cars/Car.mjs";
 
 
 export default function CarModification(car, paramsToUpgrade) {

@@ -1,10 +1,10 @@
 import compare from "../Utills/Compare.mjs";
 import { sortCarsWinners } from "../Utills/Helper.mjs";
-import Car from "./Car.mjs";
-import CarModification from "./CarUpgrade.mjs";
-import Civilian from "./Civilian.mjs";
-import RandomFactoryCar from "./RandomFactoryCar.mjs";
-import Sport from "./Sport.mjs";
+import Car from "../Classes/Cars/Car.mjs";
+import CarModification from "../car_modification/CarUpgrade.mjs";
+import Civilian from "../Classes/Cars/Civilian.mjs";
+import RandomFactoryCar from "../car_modification/RandomFactoryCar.mjs";
+import Sport from "../Classes/Cars/Sport.mjs";
 class Game {
     constructor(distanceToFinish) {
         this.distanceToFinish = distanceToFinish;

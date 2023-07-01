@@ -1,7 +1,7 @@
 import { randomIntFromInterval } from "../Utills/Helper.mjs";
-import Sport from "./Sport.mjs";
-import Civilian from "./Civilian.mjs";
-import Military from "./Military.mjs";
+import Sport from "../Classes/Cars/Sport.mjs";
+import Civilian from "../Classes/Cars/Civilian.mjs";
+import Military from "../Classes/Cars/Military.mjs";
 
 export default class RandomFactoryCar {
     constructor(players) {
