@@ -34,7 +34,7 @@ class Game {
         return upgradedCars;
     }
 
-    lookingForWinnder(cars) {
+    lookingForWinner(cars) {
 
         for (let car of cars) {
             let maxCurrentCarDistance = car.totalDistance()
@@ -67,7 +67,7 @@ class Game {
                 clearInterval(intervalId);
                 setTimeout(() => {
                     console.log('ФИНИШ!!!');
-                    console.log(game.lookingForWinnder(createdCarsToGame));
+                    console.log(game.lookingForWinner(createdCarsToGame));
                 }, 3000)
             }
         }, 1000);
