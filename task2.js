@@ -1,18 +1,3 @@
-// задача 1
-function deepCopyObject(obj) {
-  let copy = Array.isArray(obj) ? [] : {};
-
-  for (let key in obj) {
-    if (typeof obj[key] === 'object' && obj[key] !== null) {
-      copy[key] = deepCopyObject(obj[key]);
-    } else {
-      copy[key] = obj[key];
-    }
-  }
-
-  return copy;
-}
-
 // задача 2
 function getInterval(arr, from, to) {
   if (!Array.isArray(arr) || arr.some(isNaN)) {
@@ -36,8 +21,3 @@ function getInterval(arr, from, to) {
   return arr.filter((num) => num >= from && num <= to);
 }
 
-// задача 3
-function getUniqArray(arr) {
-  return [...new Set(arr)];
-}
- 
