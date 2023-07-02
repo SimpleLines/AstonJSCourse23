@@ -54,16 +54,3 @@ Company.getLeaders = function() {
   });
   return arrayMaxIncome;
 }
-
-const alex = new Company('Alex', 1000);
-const max = new Company('Max', 250);
-const peter = new Company('Peter', 250);
-const john = new Company('John', 250);
-alex.income(500);
-alex.spend(2500);
-max.income(500);
-peter.income(500);
-peter.income(500);
-john.income(750);
-console.log(Company.store);
-console.log(Company.getLeaders());
