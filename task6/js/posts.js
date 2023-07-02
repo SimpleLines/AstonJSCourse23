@@ -61,7 +61,7 @@ class Posts {
   }
 }
 
-export const fetchPosts = (page) => {
+const fetchPosts = (page) => {
   fetchGetPosts({ page }).then((res) => {
     const posts = new Posts(res);
     root.innerHTML = '';
