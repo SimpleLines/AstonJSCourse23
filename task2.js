@@ -8,10 +8,3 @@ function getNumberRadix(number, radix){
   }
 	return stringNumber.toString(radix);
 }
-
-let oneGetNumberRadix = getNumberRadix(4, 2);// получаем "100"
-let twoGetNumberRadix = getNumberRadix('16', 8);// получаем "20"
-// let threeGetNumberRadix = getNumberRadix('Hello', 4);// получаем ошибку
-// let fourGetNumberRadix = getNumberRadix(10, 32);// получаем ошибку
-// let fiveGetNumberRadix = getNumberRadix(10, "JS");// получаем ошибку
-console.log(oneGetNumberRadix, twoGetNumberRadix);
