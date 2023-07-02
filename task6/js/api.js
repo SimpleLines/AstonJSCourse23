@@ -14,12 +14,11 @@ export const fetchGetPosts = async ({ limit = 10, page = 1 }) => {
   };
 };
 
-export const fetchGetComments = async (id) => {
-  const response = await fetch(
-    `${BASE_URL}/comments?postId=${id}`
-  );
+export const fetchGetComments = async (post) => {
+  const response = await fetch(`${BASE_URL}/comments?postId=${post.id}`);
   const data = await response.json();
   return {
     data,
+    post,
   };
 };
