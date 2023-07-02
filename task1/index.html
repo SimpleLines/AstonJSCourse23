@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title">Я приветсвую вас на гонках по выживанию!</h1>
+  </header>
+  <section>        
+    <div class="preparation__cars">
+      <h2 class="preparation__cars-title">Выберите пожалуйста один автомобиль из 3 предстваленных типов!</h2>
+      <div class="cars">
+        <button class="cars__civilian">Гражданский (civilian)</button>
+        <button class="cars__sport">Спортивный (sport)</button>
+        <button class="cars__military">Военный (military)</button>
+      </div>        
+      <div class="modal">
+        <h3 class="modal__title">Распределите пожалуйста 2 дополнительных очка для повышения характеристик вашего автомобиля</h3>
+        <div class="modal__characteristics">
+          <div class="modal__characteristics-fuel">
+            <h3 class="fuel__title">fuel (объем дополнительного топливного бака)</h3>
+            <button class="fuel__minus">-</button>
+            <input type="number" class="fuel__input">
+            <button class="fuel__plus">+</button>
+          </div>
+          <div class="modal__characteristics-lowFuelConsumption">
+            <h3 class="lowFuelConsumption__title">lowFuelConsumption (коэффициент оптимизации расхода топлива)</h3>
+            <button class="lowFuelConsumption__minus">-</button>
+            <input type="number" class="lowFuelConsumption__input">
+            <button class="lowFuelConsumption__plus">+</button>
+          </div>
+          <div class="modal__characteristics-durability">
+            <h3 class="durability__title">durability (коэффициент прочности автомобиля)</h3>
+            <button class="durability__minus">-</button>
+            <input type="number" class="durability__input">
+            <button class="durability__plus">+</button>
+          </div>
+          <div class="modal__characteristics-speed">
+            <h3 class="speed__title">speed (коэффициент увеличения скорости)</h3>
+            <button class="speed__minus">-</button>
+            <input type="number" class="speed__input">
+            <button class="speed__plus">+</button>
+          </div> 
+          <button class="modal__characteristics-close">Сохранить изменения</button>                   
+        </div>                              
+      </div>        
+    </div>
+    <div class="start">
+      <h2 class="start__title">Машины готовы к старту!</h1>
+    </div>          
+  </section>
+</body>
+</html>
