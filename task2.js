@@ -13,11 +13,3 @@ const addElementsToArray = (arr, index) => (...args) => {
     return array.concat(args);
   }  
 }
-
-let oneAddElementsToArray = addElementsToArray([10, 80, 90, 30])(100, 200) // [ 10, 80, 90, 30, 100, 200 ]
-let twoAddElementsToArray = addElementsToArray([10, 80, 90, 30], 2)(100, 200) // [ 10, 80, 100, 200, 90, 30 ]
-let threeAddElementsToArray = addElementsToArray([10, 80, 90, 30], 50)(100, 200) // [ 10, 80, 90, 30, 100, 200 ]
-// let fourAddElementsToArray = addElementsToArray([10, 80, 90, 30], -2)(100, 200) // ошибка
-// let fiveAddElementsToArray = addElementsToArray([10, 80, 90, 30], 2.5)(100, 200) // ошибка
-
-console.log(oneAddElementsToArray, twoAddElementsToArray, threeAddElementsToArray);

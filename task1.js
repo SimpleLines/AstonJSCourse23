@@ -9,8 +9,3 @@ function deleteElementFromArray(arr, elem){
     return index !== deleteIndex;
   });
 }
-
-let oneDeleteElementFromArray = deleteElementFromArray([ 10, 80, 90, 30 ], 90) // [ 10, 80, 30 ]
-let twoDeleteElementFromArray = deleteElementFromArray([ 10, 80, 90, 30 ], 100) // [ 10, 80, 90, 30 ]
-
-console.log(oneDeleteElementFromArray, twoDeleteElementFromArray);
