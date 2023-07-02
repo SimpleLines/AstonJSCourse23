@@ -1,15 +1,3 @@
-// задача 1
-Array.prototype.filterArray = function (cb, thisArg) {
-  const newArray = [];
-  for (let i = 0; i < this.length; i++) {
-    if (cb.call(thisArg, this[i], i, this)) {
-      newArray.push(this[i]);
-    }
-  }
-  return newArray;
-};
-
-
 // задача 2
 function Company(name, salary) {
   Object.defineProperties(this, {
@@ -82,4 +70,3 @@ Company.prototype.spend = function (value) {
   Company.store.money -= value;
   return Company;
 };
-
