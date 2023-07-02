@@ -4,3 +4,88 @@
   display: flex;
   align-items: center;
 }
+
+.posts, .comments {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  gap: 20px;
+}
+
+.posts__title {
+  align-self: center;
+}
+
+.posts__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+.post {
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.post__link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.post__title {
+  align-self: center;
+  font-size: 16px;
+  text-align: center;
+}
+
+.post__title--comments {
+  text-align: center;
+}
+
+.comments__title {
+  font-size: 22px;
+  text-align: center;
+}
+
+.comments__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment__name {
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.pagination {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.page__link {
+  display: block;
+  padding: 5px;
+  border-radius: 100%;
+  min-width: 30px;
+  text-align: center;
+  background-color: bisque;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.back-button {
+  align-self: flex-start;
+  color: blue;
+}

@@ -37,7 +37,7 @@ export const renderPagination = (totalPages, currentPage, setPage) => {
 
   for (let i = 1; i <= totalPages; i++) {
     const pageLink = document.createElement('a');
-    pageLink.classList.add('page-link');
+    pageLink.classList.add('page__link');
     pageLink.textContent = i;
 
     pageLink.addEventListener('click', (e) => {
@@ -55,22 +55,21 @@ export const renderPagination = (totalPages, currentPage, setPage) => {
 
 export const renderComments = (data) => {
   const commentsList = document.createElement('ul');
-  commentsList.classList.add('comments-list', 'list-reset');
+  commentsList.classList.add('comments__list', 'list-reset');
 
   for (let comment of data) {
-    console.log(comment);
     const commentItem = document.createElement('li');
-    const commentAuthor = document.createElement('h2');
+    const commentName = document.createElement('h2');
     const commentBody = document.createElement('p');
 
     commentItem.classList.add('comment');
-    commentAuthor.classList.add('comment__author');
+    commentName.classList.add('comment__name');
     commentBody.classList.add('comment__body');
 
-    commentAuthor.textContent = comment.name;
+    commentName.textContent = comment.name;
     commentBody.textContent = comment.body;
 
-    commentItem.append(commentAuthor, commentBody);
+    commentItem.append(commentName, commentBody);
     commentsList.append(commentItem);
   }
 

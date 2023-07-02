@@ -50,9 +50,10 @@ class Posts {
 
   goToPostPage(post) {
     const urlParams = new URLSearchParams(location.search);
+    const page = urlParams.get('page')
     urlParams.delete('page');
     urlParams.set('id', post.id);
-    history.replaceState({}, '', `${location.pathname}?${urlParams}`);
+    history.replaceState({page}, '', `${location.pathname}?${urlParams}`);
     fetchComments(post);
   }
 
@@ -69,4 +70,6 @@ const fetchPosts = (page) => {
   });
 };
 
-fetchPosts(1);
+const urlParams = new URLSearchParams(location.search);
+
+fetchPosts(urlParams.get('page'));
