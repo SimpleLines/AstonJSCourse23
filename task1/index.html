@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game__wrapper">
+    <h1>Гонки</h1>
+    <p>Выберите класс автомобиля</p>
+    <select  name="" id="carType">
+        <option value="">Выберете класс автомобиля</option>
+        <option value="civilian">Civilian</option>
+        <option value="sport">Sport</option>
+        <option value="military">Military</option>
+    </select>
+    <div class="wrapper">
+        <p>У вас доступны 2 очка характеристики</p>
+        <div><label for="">Имя автомобиля</label><input id="carName" type="text" placeholder="Введите имя автомобиля"></div>
+        <div><label for="">Топливо</label><input id="carFuel" type="number" placeholder="Введите количество топлива" min="0"></div>
+        <div><label for="">Оптимизации расхода топлива</label><input id="lowFuelConsumption" type="number" placeholder="Введите оптимизацию" min="0"></div>
+        <div><label for="">Прочность</label><input id="carDurability" type="number" placeholder="Введите прочность" min="0"></div>
+        <div><label for="">Скорость</label><input id="speed" type="number" placeholder="Введите скорость" min="0"></div>
+        <div><label for="">Количество соперников</label><input id="enemies" type="number" placeholder="Введите количество соперников" min="0"></div>
+        <button class="btn">Показать участников</button>
+    </div>
+        
+
+    </div>
+    </div>
+</body>
+    <script src="main.js"></script>
+</html>
