@@ -14,7 +14,7 @@ class Car {
     this.name = 'Unknown Car',
     addCarInCars(this);
   };
-
+  
   upgradeField(field, operation) {
     if (this.#updateCount > 0 && operation === 'INCREMENT') {
       this[field] += 1;
@@ -27,7 +27,7 @@ class Car {
       this.#updateCount += 1;
     } else if (this.#updateCount === 2 && operation === 'DECREMENT') {
       return null;
-    } else {throw new Error("Превышен лимит распределяемых очков")}
+    } else {throw new Error('Превышен лимит распределяемых очков')}
   };
 };
 
