@@ -1,4 +1,4 @@
-import Car from "./Car";
+import Car from "./Car.js";
 
 class CivilianCar extends Car {
   constructor(bonusFuel, bonusLowFuelConsumption, bonusDurability, bonusSpeed) {
@@ -8,6 +8,10 @@ class CivilianCar extends Car {
       durability: 2,
       speed: 4,
       name: "Civilian Car",
+      bonusFuel,
+      bonusLowFuelConsumption,
+      bonusDurability,
+      bonusSpeed,
     });
   }
 }

@@ -2,14 +2,10 @@ import CivilianCar from "../components/CivilianCar.js";
 import SportCar from "../components/SportCar.js";
 import MilitaryCar from "../components/MilitaryCar.js";
 
-// Создание экземпляров автомобилей и их сравнение
-// const cars = [new CivilianCar(), new SportCar(), new MilitaryCar()];
+const test1 = new CivilianCar(1, 0, 0, 1, 1, 0, 0, 1);
+const test2 = new SportCar(0, 1, 0, 1, 0, 1, 0, 1);
+const test3 = new MilitaryCar(1, 0, 1, 0, 1, 0, 1, 0);
 
-// const car = new CivilianCar();
-// console.log(car.calculatePowerReserve()); // Вычисление запаса хода
-// console.log(car.calculateDurability()); // Вычисление прочности
-// console.log(car.calculateSpeed()); //
-
-const test = SportCar();
-
-console.log(test);
+console.log(test1.calculatePowerReserve());
+console.log(test1.calculateDurability());
+console.log(test1.calculateSpeed());
