@@ -12,8 +12,9 @@ const validateArgFuncNumberRadix = (userNumber, userRadix) => {
         )
     ) {
         throw new Error ("Функция getNumberRadix была вызвана с некорректными параметрами");
-    }
+    };
 }
+
 function getNumberRadix(number, radix) {
     validateArgFuncNumberRadix(number, radix);
     return Number(number).toString(radix);
