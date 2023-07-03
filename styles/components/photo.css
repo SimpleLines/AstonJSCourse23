@@ -1,0 +1,42 @@
+@import url('./../adjustment/reset.css');
+@import url('./../adjustment/adjustment.css');
+
+.card {
+    padding: 5px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-align: center;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.card__title {
+    font-size: 2rem;
+    margin: 5px 0 20px;
+}
+
+.card__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.card__img-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.card__content {
+    padding: 10px;
+    font-size: 1.2rem;
+}
