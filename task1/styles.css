@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+   
+    background: rgb(2, 0, 36);
+    background: linear-gradient(52deg, rgba(2, 0, 36, 1) 0%, rgba(24, 0, 105, 0.958420868347339) 47%, rgba(0, 212, 255, 1) 100%);
+}
+
+ul {
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+li {
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none;
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgb(60, 185, 55);
+    height: 80%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+li:hover {
+    background-color: rgba(226, 214, 214, 0.74);
+}
+
+#btn-prev:hover,
+#btn-next:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    border: 1px solid white;
+}
+
+#btn-next,
+#btn-prev {
+    border: none;
+    border-radius: 10px 0 10px 0;
+    font-size: 30px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(52deg, rgba(2, 0, 36, 1) 0%, rgba(0, 105, 0, 0.958420868347339) 66%, rgba(0, 212, 255, 1) 100%);
+    width: 90px;
+    height: 40px;
+}
+
+#closePopUp {
+    position: absolute;
+    text-align: center;
+    opacity: 1;
+    border: none;
+    border-radius: 15px;
+    padding: 0;
+    margin: 0;
+    right: 1%;
+    top: 1%;
+    width: 30px;
+    height: 30px;
+}
+
+#box {
+    width: 500px;
+    overflow: hidden;
+    background: rgb(223, 135, 150);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    padding: 10px;
+    text-align: center;
+    display: none;
+}
+
+#userBody {
+    text-align: left;
+}
+
+#userTitle {
+    font-weight: 700;
+}
+
+#userId {
+    font-style: italic;
+    text-align: right;
+}
+
+.close {
+    font-size: 18px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: rgb(111, 111, 223);
+    /* display: inline-block; */
+    border-radius: 1px solid #000;
+}
+
+.container {
+    position: absolute;
+    bottom: 1%;
+    width: 100%;
+    margin: auto;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+}
