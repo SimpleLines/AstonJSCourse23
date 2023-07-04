@@ -1,16 +1,6 @@
-const SPORT_CAR = 'sport';
-const MILITARY_CAR = 'military';
-const CIVILIAN_CAR = 'civilian';
+import { DURABILITY, FUEL, LOW_FUEL_CONSUMPTION, POINTS_NUM, POWER_REVERSE, SPEED } from '../../core/constants.js';
 
-const DURABILITY = 'durability';
-const LOW_FUEL_CONSUMPTION = 'lowFuelConsumption';
-const FUEL = 'fuel';
-const SPEED = 'speed';
-const POWER_REVERSE = 'powerReverse';
-
-const POINTS_NUM = 2;
-
-class Car {
+export class Car {
   #fuel;
   #lowFuelConsumption;
   #durability;
@@ -133,84 +123,3 @@ class Car {
     }
   }
 }
-
-class CivilianCar extends Car {
-  constructor(name) {
-    super({ fuel: 2, lowFuelConsumption: 2, durability: 2, speed: 4, name });
-  }
-}
-
-class SportCar extends Car {
-  constructor(name) {
-    super({ fuel: 2, lowFuelConsumption: 1, durability: 1, speed: 6, name });
-  }
-}
-
-class MilitaryCar extends Car {
-  constructor(name) {
-    super({ fuel: 2, lowFuelConsumption: 2, durability: 4, speed: 2, name });
-  }
-}
-
-function carFactory({ type, name }) {
-  let Car;
-  switch (type) {
-    case MILITARY_CAR:
-      Car = MilitaryCar;
-      break;
-    case CIVILIAN_CAR:
-      Car = CivilianCar;
-      break;
-    case SPORT_CAR:
-      Car = SportCar;
-      break;
-    default:
-      Car = CivilianCar;
-      break;
-  }
-  return new Car(name);
-}
-
-function runGame({ enemiesNumber, playerCarType, playerCarName }) {
-  const enemiesCars = [];
-  for (let i = 0; i < enemiesNumber; i++) {
-    enemiesCars.push(createRandomCar(i));
-  }
-
-  const playerCar = carFactory({ type: playerCarType, name: playerCarName });
-
-  return {
-    enemiesCars,
-    playerCar,
-  };
-}
-
-function getRandom(min, max) {
-  return Math.round(min - 0.5 + Math.random() * (max - min + 1));
-}
-
-function createRandomCar(index) {
-  const carTypes = [SPORT_CAR, CIVILIAN_CAR, MILITARY_CAR];
-  const type = getRandomParam(carTypes);
-  const name = `Car ${index + 1}`;
-  const enemyCar = carFactory({ type, name });
-  improveRandomChars(enemyCar);
-  return enemyCar;
-}
-
-function improveRandomChars(car) {
-  const chars = [DURABILITY, LOW_FUEL_CONSUMPTION, SPEED, FUEL];
-  for (let i = 0; i < POINTS_NUM; i++) {
-    const char = getRandomParam(chars);
-    car.improve(char);
-  }
-}
-
-function getRandomParam(paramsArr) {
-  const paramsNum = paramsArr.length;
-  const randomNum = getRandom(0, paramsNum - 1);
-  return paramsArr[randomNum];
-}
-
-const { enemiesCars, playerCar } = runGame({ enemiesNumber: 3, playerCarType: SPORT_CAR, playerCarName: 'Player Car' });
-Car.compare([...enemiesCars, playerCar]);
