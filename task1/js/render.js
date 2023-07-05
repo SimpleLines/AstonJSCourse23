@@ -27,7 +27,6 @@ export const renderPosts = (data, goToPostPage) => {
 
     postsList.append(postItem);
   }
-
   return postsList;
 };
 
@@ -39,17 +38,15 @@ export const renderPagination = (totalPages, currentPage, setPage) => {
     const pageLink = document.createElement('a');
     pageLink.classList.add('page__link');
     pageLink.textContent = i;
+    pageLink.href = `?page=${i}`;
 
     pageLink.addEventListener('click', (e) => {
       e.preventDefault();
       setPage(i);
     });
 
-    pageLink.href = `?page=${i}`;
-
     pagination.append(pageLink);
   }
-
   return pagination;
 };
 
@@ -72,6 +69,5 @@ export const renderComments = (data) => {
     commentItem.append(commentName, commentBody);
     commentsList.append(commentItem);
   }
-
   return commentsList;
 };

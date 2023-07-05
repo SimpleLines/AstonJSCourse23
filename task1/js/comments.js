@@ -7,19 +7,19 @@ class Comments {
     this.postTitle = document.createElement('h1');
     this.commentsTitle = document.createElement('h2');
     this.postBody = document.createElement('p');
-    
+
     this.comments.classList.add('comments');
     this.postTitle.classList.add('post__title--comments');
     this.commentsTitle.classList.add('comments__title');
     this.postBody.classList.add('post__body');
-    
+
     this.postTitle.textContent = post.title;
     this.postBody.textContent = post.body;
     this.commentsTitle.textContent = 'Comments:';
-    
+
     this.addBackButton();
     this.comments.append(this.postTitle, this.postBody, this.commentsTitle);
-    
+
     this.renderComments(data);
   }
 
@@ -33,15 +33,14 @@ class Comments {
     const backButton = document.createElement('button');
     backButton.classList.add('back-button', 'btn-reset');
     backButton.textContent = 'Back to Posts';
-  
+
     backButton.addEventListener('click', () => {
       const page = history.state.page;
       window.location.href = `index.html?page=${page}`;
     });
-  
+
     this.comments.append(backButton);
   }
-  
 
   getComments() {
     return this.comments;

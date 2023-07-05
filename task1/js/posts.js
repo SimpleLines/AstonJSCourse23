@@ -50,10 +50,10 @@ class Posts {
 
   goToPostPage(post) {
     const urlParams = new URLSearchParams(location.search);
-    const page = urlParams.get('page')
+    const page = urlParams.get('page');
     urlParams.delete('page');
     urlParams.set('id', post.id);
-    history.replaceState({page}, '', `${location.pathname}?${urlParams}`);
+    history.replaceState({ page }, '', `${location.pathname}?${urlParams}`);
     fetchComments(post);
   }
 
