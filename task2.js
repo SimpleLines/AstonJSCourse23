@@ -18,6 +18,7 @@ Company.addStaff = function (staff) {
   let duplicate = Company.store.staffList.some(
     (item) => item.name === staff.name
   );
+
   if (!duplicate) {
     Company.store.staffList.push(staff);
     Company.store.countStaff++;
@@ -35,6 +36,7 @@ Company.store = {
     let arrayMaxIncome = this.staffList.filter(function (item) {
       return item.income === maxIncome;
     });
+
     return arrayMaxIncome;
   },
 };
@@ -50,7 +52,6 @@ Company.prototype.income = function (value) {
   };
 
   Company.store.staffList.splice(index, 1, newObj);
-
   Company.store.money += value - this.salary;
   return Company;
 };
@@ -66,7 +67,6 @@ Company.prototype.spend = function (value) {
   };
 
   Company.store.staffList.splice(index, 1, newObj);
-
   Company.store.money -= value;
   return Company;
 };
