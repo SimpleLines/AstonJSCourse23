@@ -6,15 +6,6 @@ class Car{
     this.speed = 0 // коэффициент увеличения скорости
     this.name = 'Unknown Car'
     }
-
-    getTotalValue(){
-      const total = this.fuel + this.lowFuelConsumption + this.durability + this.speed;
-      if(total > 12){
-        throw Error('Общая сумма очков не должна привышать 12')
-      }
-      
-    }
-
     getDurability(){
       return 100 + this.durability * 0.1 * 100;
     }
@@ -71,14 +62,17 @@ let arrRacingCars = [];
 
 carType.addEventListener('change', ()=>{
     const carTypeValue = carType.value;
+    console.log(carTypeValue)
+    
     selectCar = setCarClass(carTypeValue)
-    setCarInitialValue(selectCar)
+    setCarInitialValue() 
 })
-const setCarInitialValue =({fuel, lowFuelConsumption, durability,speed})=>{
-  carFuelInput.value = fuel
-  lowFuelConsumptionInput.value = lowFuelConsumption
-  carDurabilityInput.value = durability
-  speedInput.value = speed
+const setCarInitialValue =()=>{
+  carFuelInput.value = selectCar.fuel
+  lowFuelConsumptionInput.value = selectCar.lowFuelConsumption
+  carDurabilityInput.value = selectCar.durability
+  speedInput.value = selectCar.speed
+ 
 }
 
 function setCarClass(selectedType) {
@@ -137,9 +131,19 @@ function setCarClass(selectedType) {
   }
 
   function setCarsOfRace() {
-    selectCar.getTotalValue()
     randomCars = createRandomCars(enemiesInput.value);
+    selectCar.name = carNameInput.value;
+    selectCar.fuel = +carFuelInput.value
+    selectCar.lowFuelConsumption = +lowFuelConsumptionInput.value
+    selectCar.durability = +carDurabilityInput.value
+    selectCar.speed = +speedInput.value
+    let total = selectCar.fuel  + selectCar.lowFuelConsumption  + selectCar.durability +selectCar.speed
+    console.log(typeof selectCar.fuel)
+    if(total > 12){
+      throw Error('Сумма очков не должна превышать 12')
+    }
     arrRacingCars = [...randomCars, selectCar];
+    
   }
 
   function compare(cars) {
@@ -156,6 +160,7 @@ btnStart.addEventListener('click' , ()=>{
    compare(arrRacingCars)
    console.log(arrRacingCars)
    console.log(compare(arrRacingCars))
+   
    
 })
 
