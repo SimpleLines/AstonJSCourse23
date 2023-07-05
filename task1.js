@@ -14,4 +14,3 @@ function sum(a, b) {
 
   return result;
 }
-
