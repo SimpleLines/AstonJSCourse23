@@ -1,16 +1,15 @@
 .container {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  max-width: 1200px;
 }
 
 #settings {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
 }
-
