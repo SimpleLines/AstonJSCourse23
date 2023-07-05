@@ -9,6 +9,5 @@ function deepCopyObject(obj) {
       copy[key] = obj[key];
     }
   }
-
   return copy;
-} 
+}
