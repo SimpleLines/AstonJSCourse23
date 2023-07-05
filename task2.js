@@ -11,4 +11,3 @@ function getNumberRadix(number, radix) {
     
     return number.toString(radix);
   }
-  console.log(getNumberRadix("16", 8))
