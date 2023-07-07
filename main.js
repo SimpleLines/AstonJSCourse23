@@ -44,8 +44,6 @@ window.addEventListener('popstate', (event) => {
   const params = new URLSearchParams(location.search);
   const initialPage = +params.get('page') || 1;
 
-  params.forEach(e => console.log(e))
-  console.log(2)
   if (params.has('photo')) {
     history.replaceState(null, `Page ${initialPage}`, `?page=${initialPage}`);
     window.location.href = `index.html?page=${initialPage}`;
