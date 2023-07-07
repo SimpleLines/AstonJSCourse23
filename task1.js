@@ -15,11 +15,10 @@ const getPosts = async (url, limit = 10, page = 1) => {
 async function renderPost() {
     getPosts(url, limit = 10, page = 1)
         .then((result) => {
-            let posts = result.data;
-            let pages = result.totalPages;
+            let { data, totalPages } = result;
 
-            displayList(posts, pages);
-            displayPagination(pages);
+            displayList(data, totalPages);
+            displayPagination(totalPages);
         });
 
     function displayList(postsData) {
@@ -81,10 +80,9 @@ async function renderPost() {
             currentPage = page;
             getPosts(url, limit = 10, page = currentPage)
                 .then((result) => {
-                    let posts = result.data;
-                    let pages = result.totalPages;
+                    let { data, totalPages } = result;
 
-                    displayList(posts, pages);
+                    displayList(data, totalPages);
                 });
         })
 
