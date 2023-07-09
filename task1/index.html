@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Race Game</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="main.js" type="module" defer></script>
+</head>
+<body>
+
+<h1>Race Game</h1>
+
+<div class="container">
+
+    <div class="car-type">
+        <label for="car-type-select">Select Car Type:</label>
+        <select id="car-type-select">
+            <option value="" disabled selected>Select Car Type</option>
+            <option value="CivilianCar">Civilian Car</option>
+            <option value="SportCar">Sport Car</option>
+            <option value="MilitaryCar">Military Car</option>
+        </select>
+    </div>
+
+    <div class="compare">
+        <h2>Comparative Characteristics</h2>
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Power Reserve</th>
+                    <th>Durability</th>
+                    <th>Speed</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="add-opp">
+        <input id="opponent-count" type="number" />
+        <button class="add-opponent">Добавить оппонетов</button>
+    </div>
+
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="characteristic">
+            <label for="fuel">Fuel:</label>
+            <button class="decrease" id="decreaseFuel">-</button>
+            <span id="fuel">0</span>
+            <button class="increase" id="increaseFuel">+</button>
+        </div>
+        <div class="characteristic">
+            <label for="lowFuelConsumption">Low Fuel Consumption:</label>
+            <button class="decrease" id="decreaseLowFuelConsumption">-</button>
+            <span id="lowFuelConsumption">0</span>
+            <button class="increase" id="increaseLowFuelConsumption">+</button>
+        </div>
+        <div class="characteristic">
+            <label for="durability">Durability:</label>
+            <button class="decrease" id="decreaseDurability">-</button>
+            <span id="durability">0</span>
+            <button class="increase" id="increaseDurability">+</button>
+        </div>
+        <div class="characteristic">
+            <label for="speed">Speed:</label>
+            <button class="decrease" id="decreaseSpeed">-</button>
+            <span id="speed">0</span>
+            <button class="increase" id="increaseSpeed">+</button>
+        </div>
+        <div class="remaining-points">
+            Remaining points: <span id="remainingPoints">2</span>
+        </div>
+    </div>
+</div>
+
+<ul class="result"></ul>
+
+<div class="start">
+    <button id="start-button">Start Race</button>
+</div>
+
+</body>
+</html>
