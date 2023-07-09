@@ -1,0 +1,49 @@
+body {
+  background-color: #183e72;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  width: 40%;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  margin: 5px auto;
+  display: flex;
+  padding: 10px 20px;
+  background-color: white;
+  color: rgb(128, 128, 128);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-el {
+  background-color: white;
+  color: rgb(128, 128, 128);
+  padding: 10px;
+  margin: 5px;
+}
+
+.pagination-item-active {
+  font-weight: 600;
+  color: blue;
+  background-color: lightgrey;
+}
