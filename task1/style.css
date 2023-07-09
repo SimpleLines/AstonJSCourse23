@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.posts-item {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  border: 1px solid black;
+  padding: 5px 5px;
+  border-radius: 5%;
+}
+
+.post-title {
+  font-weight: 600;
+  text-align: center;
+}
+
+.controlBlock {
+  display: flex;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+.btn {
+  padding-left: 15px;
+}
+
+.rightOutsideBtn,
+.leftOutsideBtn,
+.btn {
+  cursor: pointer;
+}
+
+.rightOutsideBtn:hover,
+.leftOutsideBtn:hover,
+.btn:hover {
+  color: red;
+}
+
+._hide {
+  visibility: hidden;
+}
+
+._hide + ._hide {
+  display: none;
+}
