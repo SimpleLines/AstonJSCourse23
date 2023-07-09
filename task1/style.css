@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.game__wrapper{
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+    width: 700px;
+    background: rgba(0, 0, 0, 0.478);
+    padding: 20px;
+    border-radius: 5px;
+
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+.wrapper div{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+.wrapper label{
+    font-size: 18px;
+    font-weight: 700;
+    display: inline-block;
+}
+.wrapper input{
+    width: 300px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+.wrapper .btn{
+    background: #000;
+    color: #fff;
+    padding: 10px 15px;
+    margin-top: 20px;
+}
