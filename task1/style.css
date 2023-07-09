@@ -1,0 +1,35 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  text-align: center;
+}
+button{
+  cursor: pointer;
+}
+input{
+  width: 20px;
+
+  margin: 0 10px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.start{
+  visibility: hidden;
+}
+.visible{
+  visibility: visible;
+}
+.modal{
+  display: none;
+}
+.show{
+  display: block;
+}
+.modal__characteristics-close{
+  margin-top: 20px;
+}
+
