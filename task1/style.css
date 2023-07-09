@@ -1,0 +1,42 @@
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.posts {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.post {
+  text-align: center;
+  margin-bottom: 100px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.pagination {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pagination-button {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  background: #ccc;
+  transition: background 0.3s linear;
+}
+
+.pagination-button:hover {
+  background: blue;
+  color: white;
+}
