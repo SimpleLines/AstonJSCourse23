@@ -1,0 +1,15 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    padding: 20px;
+}
+
+.row {
+    justify-content: space-between;
+}
+
+.text-danger {
+    font-size: 2rem;
+}

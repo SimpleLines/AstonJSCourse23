@@ -1,0 +1,24 @@
+.navigation {
+    display: flex;
+    justify-content: center;
+}
+
+    .pagination {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+        .page-link {
+            font-size: 1.7rem;
+        }
+
+        .page-link:hover {
+            background-color: #eee;
+        }
+
+        .page-item.active .page-link {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
