@@ -1,0 +1,65 @@
+.page {
+    height: 100%;
+  }
+  .page-body {
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: 1fr auto;
+  }
+  
+  
+  .posts-list {
+    place-self: center;
+    list-style: none;
+  }
+  
+  .pagination-block {
+    display: flex;
+    place-self: center;
+    padding: 50px;
+  }
+  
+  .pagination-button {
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    color: #0fdaf1de;
+    border: none;
+    padding: none;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .post-item {
+      padding: 15px;
+      border: 2px solid grey;
+  }
+  
+  .post-item-text {
+      font-size: 20px;
+  }
+  
+  .pagination-list {
+    display: flex;
+    place-self: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pagination-link {
+      text-decoration: none;
+  }
+  
+  .pagination-item {
+      cursor: pointer;
+      margin-right: 5px;
+  }
+  
+  .pagination-text {
+    color: #0fdaf1de;
+    border-bottom: 1px solid #0fdaf1de;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
